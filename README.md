@@ -12,9 +12,10 @@ Implemente Hannoi para n = 4 mostrando todos los pasos seguidos por el algoritmo
 * Haga commit y push cuantas al menos 2 veces durante el tiempo de la entevista
 * Imprima casa paso del algoritmo en la pantalla como por ejemplo
 
-    43
-    2
-    1
+        Borigen)      4, 3
+        Bintermedia)  2
+        Bdestino)     1
+
 
 
 # Descripción del problema
