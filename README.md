@@ -1,6 +1,6 @@
 # Prueba de Hanoi
 
-Hanoi es un problema bastante conocido en el mundo de la informática y un referente en muchos libros de texto, debido a su complejidad de 2^n-1 constituyr un reto interesante para un desarrollador
+Hanoi es un problema bastante conocido en el mundo de la informática y un referente en muchos libros de texto, debido a su complejidad de 2^n-1 constituye un reto interesante para un desarrollador
 
 # Instrucciones
 
