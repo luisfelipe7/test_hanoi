@@ -25,3 +25,5 @@ El juego, en su forma más tradicional, consiste en tres varillas verticales. En
 * Sólo se puede mover un disco cada vez.
 * Un disco de mayor tamaño no puede descansar sobre uno más pequeño que él mismo.
 * Sólo puedes desplazar el disco que se encuentre arriba en cada varilla.
+
+![hanoi](https://upload.wikimedia.org/wikipedia/commons/6/60/Tower_of_Hanoi_4.gif)
