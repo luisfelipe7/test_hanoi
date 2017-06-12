@@ -8,9 +8,9 @@ Implemente Hannoi para n = 4 mostrando todos los pasos seguidos por el algoritmo
 
 * Debe compartir pantalla con el entrevistador
 * Cree un fork de este repositorio
-* Desarrolle su implementación en el lenguaje seleccionado.
+* Desarrolle su implementación en Python 3.
 * Haga commit y push al menos 2 veces durante el tiempo de la entevista
-* Imprima casa paso del algoritmo en la pantalla como por ejemplo
+* Imprima cada paso del algoritmo en la pantalla como por ejemplo
 
         Borigen)      4, 3
         Bintermedia)  2
