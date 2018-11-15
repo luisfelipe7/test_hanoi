@@ -15,7 +15,7 @@ import functools
 
 # *********************** Hanoi Solution by Felipe Castro  **************************
 
-# Defining the sticks of the game
+# Defining the sticks of the game and other important elements
 
 stick1 = []
 stick2 = []
@@ -26,7 +26,7 @@ numberOfStick = 0
 numberOfElements = 0
 
 
-# Defining a method to obtain next number of stick 
+# Defining a method to obtain next number of stick
 
 
 def obtainNumberOfNextStick():
@@ -56,6 +56,7 @@ def obtainStick():
 
 
 # Defining a method to obtain the next stick
+
 
 def obtainStickNext(stickSucessionNumber):
     global stick1
@@ -103,18 +104,42 @@ def makeMove(stickOne, sctickTwo):
     makeMoves()
 
 
-# Defining the method to make the moves
+# Define method to make move Even
 
-
-def makeMoves():
+def makeMoveEven():
     global lastMoveValue
     global numberOfElements
     global numberOfStick
     global numberOfMoves
-    if(theGameFinish(numberOfElements) is True):
-        print("The game finish with "+str(numberOfMoves)+" moves, come back soon!")
+    if(len(obtainStick()) != 0):
+        if(len(obtainStickNext(1)) == 0):  # Make a move
+            makeMove(obtainStick(), obtainStickNext(1))
+        else:
+            if((obtainStickNext(1)[len(obtainStickNext(1))-1]) < (obtainStick()[len(obtainStick())-1])):
+                if(len(obtainStickNext(2)) == 0):  # Make a move
+                    makeMove(obtainStick(), obtainStickNext(2))
+                else:
+                    if((obtainStickNext(2)[len(obtainStickNext(2))-1]) < (obtainStick()[len(obtainStick())-1])):
+                        numberOfStick = obtainNumberOfNextStick()
+                        makeMoves()
+                    else:
+                        makeMove(obtainStick(), obtainStickNext(2))
+            else:
+                makeMove(obtainStick(), obtainStickNext(1))
     else:
-        if(len(obtainStick()) != 0):
+        numberOfStick = obtainNumberOfNextStick()
+        makeMoves()
+
+
+# Define method to make move Odd
+
+def makeMoveOdd():
+    global lastMoveValue
+    global numberOfElements
+    global numberOfStick
+    global numberOfMoves
+    if(len(obtainStick()) != 0):
+        if((obtainStick()[len(obtainStick())-1]) != 1):
             if(len(obtainStickNext(1)) == 0):  # Make a move
                 makeMove(obtainStick(), obtainStickNext(1))
             else:
@@ -130,11 +155,39 @@ def makeMoves():
                 else:
                     makeMove(obtainStick(), obtainStickNext(1))
         else:
-            numberOfStick = obtainNumberOfNextStick()
-            makeMoves()
+            if(len(obtainStickNext(2)) == 0):  # Make a move
+                makeMove(obtainStick(), obtainStickNext(2))
+            else:
+                if((obtainStickNext(2)[len(obtainStickNext(2))-1]) < (obtainStick()[len(obtainStick())-1])):
+                    numberOfStick = obtainNumberOfNextStick()
+                    makeMoves()
+                else:
+                    makeMove(obtainStick(), obtainStickNext(2))
+    else:
+        numberOfStick = obtainNumberOfNextStick()
+        makeMoves()
 
 
-# Defining the method to check if win
+# Defining the method to make the moves
+
+
+def makeMoves():
+    global lastMoveValue
+    global numberOfElements
+    global numberOfStick
+    global numberOfMoves
+    if(theGameFinish(numberOfElements) is True):
+        print("The game finish with "+str(numberOfMoves)+" moves, come back soon!")
+    else:
+        if(numberOfElements % 2 == 0):
+            makeMoveEven()
+        else:
+            makeMoveOdd()
+
+        # Defining the method to check if win
+
+
+# Check if the game finish
 
 
 def theGameFinish(numberOfElements):
@@ -160,7 +213,7 @@ def printingTheActualGame():
     print("Bintermedia "+str(stick2))
     print("Bdestino "+str(stick3))
     numberOfMoves += 1
-    input("Press a button to continue")
+    #input("Press a button to continue")
 
 
 # Defining the method to start the game
